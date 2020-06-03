@@ -44,7 +44,7 @@ client.on('message', message =>{
         }
     }
     // Declares the blacklisted exclamation point
-    let blacklisted = ['!']
+    let blacklisted = ['!','¡']
     
     //Checks and remove the exclamation point
     let foundInText = false;

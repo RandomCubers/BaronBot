@@ -59,8 +59,10 @@ client.on('message', message =>{
 
     if (mention != null) return;
 
-    if (foundInText) {
-        message.delete();
+    if (maintain == 'on') {
+        if (foundInText) {
+            message.delete();
+        }
     }
 
 });

@@ -59,7 +59,7 @@ client.on('message', message =>{
 
     if (mention != null) return;
 
-    if (maintain == 'on') {
+    if (process.env.maintain == 'on') {
         if (foundInText) {
             message.delete();
         }

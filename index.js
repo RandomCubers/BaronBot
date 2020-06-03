@@ -4,6 +4,8 @@ const client = new Discord.Client();
 
 client.on('ready', () =>{
     console.log('This bot is online!')
+
+    bot.user.setStatus('idle')
 })
 
 client.on('message', message =>{

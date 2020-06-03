@@ -22,11 +22,11 @@ client.on('message', message =>{
     var bot_prefix = ['!', '-','<@']; //Bot Prefixes
     var prefix = 'mb!' // Prefix for bot
 
-    if (msg.content.startsWith(prefix + 'ping')) { //Responds to command when prefix is used with ping
+    if (msg.startsWith(prefix + ' ping')) { //Responds to command when prefix is used with ping
         message.reply('Hi, Moderation_bot is online!') //Responds with "Hi, Moderation_bot is online!" when prefix with "ping" is used
     }
 
-    if (msg.content.startsWith(prefix + 'kick ')) { //Checks if message starts with prefix and has "kick"
+    if (msg.startsWith(prefix + ' kick ')) { //Checks if message starts with prefix and has "kick"
         if (sender.hasPermission('ADMINISTRATOR')) {//Checks if the author has admin
             var member = msg.mentions.members.first(); //Creates a variable that saves the first mention in message
             member.kick().then(() => { //Kicks the first mention and then the code below activites
@@ -39,7 +39,7 @@ client.on('message', message =>{
         }
     }
 
-    if (msg.content.startsWith(prefix + 'ban ')) { //Checks if message contains the prefix and "ban" to activate the rest of the code
+    if (msg.startsWith(prefix + ' ban ')) { //Checks if message contains the prefix and "ban" to activate the rest of the code
         if (sender.hasPermission('ADMINISTRATOR')) { //checks if the author is an admin    
             var member = msg.mentions.members.first(); //Creates a variable for the first mention in a message if prefix + "ban" is used
             var mc = msg.content.split(" ")[2]; 
@@ -53,21 +53,21 @@ client.on('message', message =>{
         }
     }
 
-    if (msg.content.startsWith(prefix + 'purge')) { //checks if message starts with prefix and "purge" if so the code below activites
+    if (msg.startsWith(prefix + ' purge')) { //checks if message starts with prefix and "purge" if so the code below activites
         if (sender.hasPermission('ADMINISTRATOR')) { //Checks if the author is an admin
             var mc = msg.content.split(" ")[1]; 
             msg.channel.bulkDelete(mc); //Deletes message by the number from mc
         }
     }
 
-    if (msg.content.startsWith(prefix + 'setprefix')) { //Checks if the message starts with prefix and "setprefix" if so the code below will commence
+    if (msg.startsWith(prefix + ' setprefix')) { //Checks if the message starts with prefix and "setprefix" if so the code below will commence
         if (sender.hasPermission('ADMINISTRATOR')) { //Checks if the authro is an admin
             var new_prefix = msg.content.split(" ")[1];
             prefix = new_prefix;
         }
     }
 
-    if (msg.content.startsWith(prefix + 'help')) { //Checks if the message starts with prefix and "help" if so code below continues
+    if (msg.startsWith(prefix + ' help')) { //Checks if the message starts with prefix and "help" if so code below continues
         let embed = new Discord.MessageEmbed()
 
         embed.setTitle('Commands')

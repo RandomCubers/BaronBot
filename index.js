@@ -70,14 +70,14 @@ client.on('message', message =>{
 
     if (msg.content.startsWith(prefix + 'help')) { //Checks if the message starts with prefix and "help" if so code below continues
         if (sender.hasPermission('ADMINISTRATOR')) { //Checks if the author is an admin
-            const embed = new Discord.MessageEmbed()
-                .setTitle('Commands')
-                .setAuthor('Moderation Bot')
-                .setColor('#3EEAEE')
-                .setDescription(prefix + ' help: Find the commands this bot uses \n' + prefix + ' kick "user": Kicks the "user" \n' + prefix + ' ban "user" "# of days": Bans the "user" for "# of days" \n' + prefix + ' purge "# of lines": Deletes "# of lines" from the most recent messages \n' + prefix + ' ping: Receive a message from the Moderation Bot :) \n' + prefix + ' setprefix: Changes the prefix this bot uses')
-                .setFooter('Powered By Admin Magic')
+            let embed = new Discord.MessageEmbed()
+            embed.setTitle('Commands')
+            embed.setAuthor('Moderation Bot')
+            embed.setColor('#3EEAEE')
+            embed.setDescription(prefix + ' help: Find the commands this bot uses \n' + prefix + ' kick "user": Kicks the "user" \n' + prefix + ' ban "user" "# of days": Bans the "user" for "# of days" \n' + prefix + ' purge "# of lines": Deletes "# of lines" from the most recent messages \n' + prefix + ' ping: Receive a message from the Moderation Bot :) \n' + prefix + ' setprefix: Changes the prefix this bot uses')
+            embed.setFooter('Powered By Admin Magic')
 
-                message.channel.send(embed)
+            message.channel.send(embed)
         }
     }
 

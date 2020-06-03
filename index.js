@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const { Client, MessageEmbed } = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () =>{
@@ -70,7 +69,7 @@ client.on('message', message =>{
 
     if (msg.content.startsWith(prefix + 'help')) { //Checks if the message starts with prefix and "help" if so code below continues
         let embed = new Discord.MessageEmbed()
-        
+
         embed.setTitle('Commands')
         embed.setAuthor('Moderation Bot')
         embed.setColor('#3EEAEE')

@@ -2,9 +2,6 @@ const Discord = require('discord.js');
 const { Client, MessageEmbed } = require('discord.js');
 const client = new Discord.Client();
 
-var prefix = 'mb!' // Prefix for bot
-var bot_prefix = ['!', '-','<@']; //Bot Prefixes
-
 client.on('ready', () =>{
     console.log('This bot is online!') 
 
@@ -23,6 +20,8 @@ client.on('message', message =>{
     var exclamation_point = 'true'; // Exclamation point tester
     var prefix_exclamation_point = []; //List for exclamation points in bot prefixes
     var mention = message.mentions.users.first(); //Searches for the first @mentions in a message 
+    var bot_prefix = ['!', '-','<@']; //Bot Prefixes
+    var prefix = 'mb!' // Prefix for bot
 
     if (msg.content.startsWith(prefix + 'ping')) { //Responds to command when prefix is used with ping
         message.reply('Hi, Moderation_bot is online!') //Responds with "Hi, Moderation_bot is online!" when prefix with "ping" is used

@@ -5,7 +5,7 @@ const client = new Discord.Client();
 client.on('ready', () =>{
     console.log('This bot is online!') 
 
-    bot.user.setActivity('idle') // Set bot to idle status
+    client.user.setStatus('idle') // Set bot to idle status
 })
 
 client.on('message', message =>{
